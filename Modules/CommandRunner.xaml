@@ -1,0 +1,26 @@
+<UserControl x:Class="Windows_Config_Toolkit.Modules.CommandRunner"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="500">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Quick Command Runner" FontSize="24" FontWeight="Bold" />
+
+        <StackPanel Grid.Row="1" Margin="0 20 0 10">
+            <TextBlock Text="Command / Script Path:" Margin="0 0 0 5"/>
+            <TextBox x:Name="txtCommandPath" Width="400" Margin="0 0 0 10"/>
+            <Button Content="Browse..." Click="BtnBrowse_Click" Width="100"/>
+        </StackPanel>
+
+        <Button Grid.Row="2" Content="Run Command" Click="BtnRunCommand_Click" HorizontalAlignment="Right"/>
+    </Grid>
+</UserControl>

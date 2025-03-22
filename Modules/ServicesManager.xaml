@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Windows_Config_Toolkit.Modules.ServicesManager"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="400" d:DesignWidth="600">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Title -->
+            <RowDefinition Height="*"/>
+            <!-- ListView -->
+            <RowDefinition Height="Auto"/>
+            <!-- Buttons -->
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Text="Services Manager" FontSize="24" FontWeight="Bold" Margin="0 0 0 15"/>
+
+        <!-- LISTVIEW goes here in Row 1 -->
+        <ListView x:Name="ServicesList" Grid.Row="1" Margin="0 0 0 10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Service Name" DisplayMemberBinding="{Binding ServiceName}" Width="250"/>
+                    <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Status}" Width="100"/>
+                    <GridViewColumn Header="Startup Type" DisplayMemberBinding="{Binding StartType}" Width="150"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <!-- Buttons at the bottom -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 10 0 0">
+            <Button Content="Start" Click="BtnStartService_Click" Margin="0 0 10 0"/>
+            <Button Content="Stop" Click="BtnStopService_Click" Margin="0 0 10 0"/>
+            <Button Content="Refresh" Click="BtnRefresh_Click"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

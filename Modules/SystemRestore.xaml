@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Windows_Config_Toolkit.Modules.SystemRestore"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="500">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="System Restore Point Creator" FontSize="24" FontWeight="Bold" />
+
+        <StackPanel Grid.Row="1" Margin="0 20 0 10">
+            <TextBlock Text="Restore Point Name:" Margin="0 0 0 5"/>
+            <TextBox x:Name="txtRestoreName" Width="300"/>
+        </StackPanel>
+
+        <Button Grid.Row="2" Content="Create Restore Point" Click="BtnCreateRestore_Click" HorizontalAlignment="Right"/>
+    </Grid>
+</UserControl>
